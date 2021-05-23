@@ -56,11 +56,11 @@ def stations():
     results = session.query(station.station).\
         order_by(station.station).all()
 
-        session.close()
+    session.close()
 
-        stations = list(np.ravel(results))
+    stations = list(np.ravel(results))
 
-        return jsonify(stations)
+    return jsonify(stations)
 
 @app.route("/api/v1.0/tobs")
 def tobs():
